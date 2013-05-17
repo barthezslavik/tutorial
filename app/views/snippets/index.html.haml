@@ -1,23 +1,17 @@
-%h1 Listing snippets
+- model_class = Snippet
+.container
+  .span10
+    %h1=t '.title', :default => model_class.model_name.human.pluralize
+  .span1
+    %br
+    = link_to t('.new', :default => t("helpers.links.new")), new_snippet_path, :class => 'btn btn-primary'
+%table.table.table-striped
+  %tbody
+    - @snippets.each do |snippet|
+      %tr
+        %td= snippet.code
+        %td= snippet.description
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_snippet_path(snippet), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), snippet_path(snippet), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
 
-%table
-  %tr
-    %th Name
-    %th Category
-    %th Code
-    %th
-    %th
-    %th
-
-  - @snippets.each do |snippet|
-    %tr
-      %td= snippet.name
-      %td= snippet.category_id
-      %td= snippet.code
-      %td= link_to 'Show', snippet
-      %td= link_to 'Edit', edit_snippet_path(snippet)
-      %td= link_to 'Destroy', snippet, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Snippet', new_snippet_path

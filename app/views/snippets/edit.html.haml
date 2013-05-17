@@ -1,7 +1,4 @@
-%h1 Editing snippet
-
-= render 'form'
-
-= link_to 'Show', @snippet
-\|
-= link_to 'Back', snippets_path
+- model_class = Snippet
+.page-header
+  %h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human
+= render :partial => "form"
