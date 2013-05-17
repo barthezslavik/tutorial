@@ -2,11 +2,6 @@ class SnippetsController < ApplicationController
   # GET /snippets
   # GET /snippets.json
   def index
-    files = IO.readlines("/tmp/x.csv")
-    files.each do |f|
-      items = f.split(",")
-      Snippet.create(code:items[0], description:items[1])
-    end
     @snippets = Snippet.all
 
     respond_to do |format|
