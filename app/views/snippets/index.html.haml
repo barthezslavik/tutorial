@@ -1,0 +1,23 @@
+%h1 Listing snippets
+
+%table
+  %tr
+    %th Name
+    %th Category
+    %th Code
+    %th
+    %th
+    %th
+
+  - @snippets.each do |snippet|
+    %tr
+      %td= snippet.name
+      %td= snippet.category_id
+      %td= snippet.code
+      %td= link_to 'Show', snippet
+      %td= link_to 'Edit', edit_snippet_path(snippet)
+      %td= link_to 'Destroy', snippet, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Snippet', new_snippet_path
