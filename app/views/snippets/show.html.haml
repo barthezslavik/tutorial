@@ -1,8 +1,9 @@
 %p= link_to @snippet.code, @snippet.code
 %p= @snippet.description
 
+%br
 - @snippet.comments.each do |comment|
-  = comment.content
+  %p= comment.content
 
 = render "comments/form"
 
