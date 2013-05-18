@@ -1,9 +1,10 @@
-%p
-  %pre
-    :preserve
-      #{@snippet.code}
-%p
-  = @snippet.description
+%p= link_to @snippet.code, @snippet.code
+%p= @snippet.description
+
+- @snippet.comments.each do |comment|
+  = comment.content
+
+= render "comments/form"
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), snippets_path, :class => 'btn'

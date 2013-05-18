@@ -1,0 +1,9 @@
+= simple_form_for(Comment.new) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :content, input_html: { rows: 10 }, label: false
+    = f.input :snippet_id, as: :hidden, input_html: { value: params[:id] }
+
+  .form-actions
+    = f.button :submit
