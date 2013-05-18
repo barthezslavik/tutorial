@@ -3,4 +3,6 @@ class Snippet < ActiveRecord::Base
 
   belongs_to :category
   has_many :comments
+
+  default_scope order("position")
 end
