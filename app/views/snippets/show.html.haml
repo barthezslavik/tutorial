@@ -1,22 +1,8 @@
-- model_class = Snippet
-.page-header
-  %h1=t '.title', :default => model_class.model_name.human
-
 %p
-  %strong= model_class.human_attribute_name(:name) + ':'
-  %br
-  = @snippet.name
+  %pre
+    :preserve
+      #{@snippet.code}
 %p
-  %strong= model_class.human_attribute_name(:category_id) + ':'
-  %br
-  = @snippet.category_id
-%p
-  %strong= model_class.human_attribute_name(:code) + ':'
-  %br
-  = @snippet.code
-%p
-  %strong= model_class.human_attribute_name(:description) + ':'
-  %br
   = @snippet.description
 
 .form-actions

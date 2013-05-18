@@ -1,4 +1,4 @@
 class Snippet < ActiveRecord::Base
-  attr_accessible :category_id, :code, :name, :description
+  attr_accessible :description, :category_id, :code, :position
 
 end
