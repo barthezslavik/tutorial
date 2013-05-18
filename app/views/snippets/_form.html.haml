@@ -1,7 +1,7 @@
 = simple_form_for @snippet do |f|
-  = f.input :category_id
-  = f.input :code
-  = f.input :description
+  = f.association :category
+  = f.input :code, as: :string
+  = f.input :description, as: :string
   .form-actions
     = f.button :submit, :class => 'btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), snippets_path, :class => 'btn'
