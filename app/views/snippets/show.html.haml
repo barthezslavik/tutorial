@@ -1,6 +1,9 @@
 %br
 %h3= @snippet.description
-%p= @snippet.code
+- if @snippet.code =~ /git/
+  %pre= `#{@snippet.code}`
+- else
+  %pre= @snippet.code
 
 %br
 - @snippet.comments.each do |comment|
