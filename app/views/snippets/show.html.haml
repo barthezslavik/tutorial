@@ -6,8 +6,10 @@
   %pre= @snippet.code
 
 %br
+%h4 Комментарии
+
 - @snippet.comments.each do |comment|
-  %p= comment.content
+  %p=raw comment.content
 
 = render "comments/form"
 

@@ -2,6 +2,9 @@
   = f.association :category
   = f.input :code, as: :string
   = f.input :description, as: :string
-  = f.input :position, as: :string
+  - if @snippet.new_record?
+    = f.input :position, as: :string, input_html: { value: Snippet.last.id+1 }
+  - else
+    = f.input :position, as: :string
   = f.button :submit, :class => 'btn-primary'
   = link_to t('.cancel', :default => t("helpers.links.cancel")), snippets_path, :class => 'btn'
