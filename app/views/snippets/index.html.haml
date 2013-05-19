@@ -5,5 +5,5 @@
     - @snippets.each do |snippet|
       %tr
         %td= link_to snippet.description, snippet
-        %td= link_to snippet.category.try(:name), snippet
+        %td= snippet.category.try(:name)
 

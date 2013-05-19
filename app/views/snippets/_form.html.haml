@@ -2,5 +2,6 @@
   = f.association :category
   = f.input :code, as: :string
   = f.input :description, as: :string
+  = f.input :position, as: :string
   = f.button :submit, :class => 'btn-primary'
   = link_to t('.cancel', :default => t("helpers.links.cancel")), snippets_path, :class => 'btn'
