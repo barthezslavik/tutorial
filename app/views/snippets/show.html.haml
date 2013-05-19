@@ -1,6 +1,6 @@
 %br
 %h3= @snippet.description
-- if @snippet.code =~ /git/
+- if (@snippet.code =~ /git diff/ || @snippet.code =~ /git show/)
   %pre= `#{@snippet.code}`
 - else
   %pre= @snippet.code
